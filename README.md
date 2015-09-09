@@ -1,3 +1,2 @@
 # English-Word
-
-English word multiple choice question
+This progect is english word multiple choice question webpage which is using the AngularJS Framework to finish it.
