@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+	<title>English Word 英翻中選擇題</title>
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+<body ng-app="englishword">
+ <!-- Begin page content -->
+    <div class="container" ng-controller="MainCtrl as mainCtrl">
+      <div class="page-header">
+        <h1>English Word 英翻中選擇問答題</h1>
+      </div>
+      <form name="form_choose">
+	      <div class="panel panel-primary">
+			  <div class="panel-heading">
+	 			題目：<span ng-bind="mainCtrl.question"></span>
+			  </div>
+			 <div class="panel-body">
+			     	<ul>
+			     		<li ng-repeat="choose in mainCtrl.chooses">
+			     			<label ng-bind="choose"></label>
+			     			<input type="radio" ng-model="mainCtrl.userans" name="choose" value="{{choose}}" required/>
+			     		</li>
+			     	</ul>
+			 </div>
+		  </div>
+	  <!-- Check the result -->
+	  <button class="btn btn-default" ng-disabled="form_choose.$invalid" ng-click="mainCtrl.check()">送出</button>
+	 </form>
+     <br>
+	 <br>
+     	結果:
+     	<span ng-bind="mainCtrl.result"></span>
+     	<br>
+    	<br>
+    	<br>
+     <!--Reproduce another question -->
+     <button class="btn btn-default" ng-click="mainCtrl.next()" >下一題</button>
+        <br>
+    	<br>
+    	<br>
+    </div>
+   	<!-- jQuery File -->
+	<script type="text/javascript" src="js/jQuery.js"></script>
+	<!--Bootstrap JavaScript File -->
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<!-- AngularJS File -->
+	<script src="js/angular.min.js"></script>
+	<!-- AngularJS Model -->
+	<script src="js/app.js"></script>
+</body>
+</html>
